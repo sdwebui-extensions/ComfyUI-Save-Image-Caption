@@ -161,7 +161,9 @@ class SaveImageCaptionBatch(BaseNode):
 
     FUNCTION = "save"
 
-    RETURN_TYPES = ()
+    RETURN_TYPES = ("STRING", )
+    RETURN_NAMES = ("image folder", )
+
     OUTPUT_NODE = True
 
     @classmethod
@@ -258,4 +260,4 @@ class SaveImageCaptionBatch(BaseNode):
                 "progress", {"node": node_id, "max": len(images), "value": index}
             )
 
-        return ()
+        return (full_output_folder, )
